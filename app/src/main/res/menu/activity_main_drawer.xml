@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_landmark"
+            android:icon="@drawable/ic_place_black_24dp"
+            android:title="@string/nav_landmarks" />
+        <item
+            android:id="@+id/nav_metro"
+            android:icon="@drawable/ic_directions_transit_black_24dp"
+            android:title="@string/nav_metro_station" />
+
+        <item
+            android:id="@+id/nav_favorite"
+            android:icon="@drawable/ic_star_black_24dp"
+            android:title="@string/nav_favorite" />
+
+    </group>
+
+
+</menu>
