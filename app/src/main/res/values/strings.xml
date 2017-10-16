@@ -1,17 +1,11 @@
 <resources>
-    <string name="app_name">"Metro Explorer"</string>
+    <string name="app_name">DC Metro Explorer</string>
+    <string name="landmark_icon">Landmark Icon</string>
+    <string name="save_landmark">Save Landmark</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
-    <string name="nav_landmarks">Landmarks</string>
-    <string name="nav_metro_station">Metro Station</string>
-    <string name="nav_favorite">Favorite Landmarks</string>
-    <string name="nav_profile">Profile</string>
-    <string name="nav_logout">Logout</string>
-
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_landmark_detail">LandmarkDetailActivity</string>
-    
+    <string name="nearby_button">Nearby Metro</string>
+    <string name="selectstation_button">Select Station</string>
+    <string name="favorites_button">Favorrites</string>
+    <string name="Search">Search</string>
+    <string name="hint">Search</string>
 </resources>
