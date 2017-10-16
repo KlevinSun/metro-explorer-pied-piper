@@ -21,4 +21,17 @@ object Constants
     val LINE_BLUE = "BL"
     val LINE_SILVER = "SL"
     val STATION_LIST = "stationlist"
+
+    // Location
+    val SUCCESS_RESULT = 0
+
+    val FAILURE_RESULT = 1
+
+    private val PACKAGE_NAME = "com.felixlin.dcmetroexplorer"
+
+    val RECEIVER = PACKAGE_NAME + ".RECEIVER"
+
+    val RESULT_DATA_KEY = PACKAGE_NAME + ".RESULT_DATA_KEY"
+
+    val LOCATION_DATA_EXTRA = PACKAGE_NAME + ".LOCATION_DATA_EXTRA"
 }

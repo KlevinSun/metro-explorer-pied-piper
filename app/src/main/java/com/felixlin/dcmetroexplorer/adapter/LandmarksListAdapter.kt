@@ -34,6 +34,7 @@ class LandmarksListAdapter(var mContext: Context, val landmarks: List<Landmark>)
 
             var intent = Intent(getContext(), LandmarkDetailActivity::class.java)
             intent.putExtra("LANDMARK", landmark)
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             getContext().startActivity(intent)
         }
     }
