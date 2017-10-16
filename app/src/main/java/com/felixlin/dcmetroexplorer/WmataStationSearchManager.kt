@@ -23,12 +23,16 @@ class WmataStationSearchManager(val context: Context, val result: ArrayList<Metr
         if(stationInfo != null && stationInfo.size()>0){
             for (i in 0..stationInfo.size() - 1){
                 val stationData = stationInfo.get(i).asJsonObject
+
                 val stationCode = stationData.get("Code").asString
                 val stationName = stationData.get("Name").asString
                 val stationTogether = stationData.get("StationTogether1").asString
                 val stationLatitude = stationData.get("Lat").asFloat
                 val stationLongtitude = stationData.get("Lon").asFloat
-                result.add(Metro(stationCode, stationName, stationLatitude, stationLongtitude, stationTogether))
+
+                val address = stationData.get("Address").asJsonObject
+                val zip = address.get("Zip").asString
+                result.add(Metro(stationCode, stationName, stationLatitude, stationLongtitude, zip, stationTogether))
             }
         }else{
             Log.e(TAG,"Loss some information during JSON parse")

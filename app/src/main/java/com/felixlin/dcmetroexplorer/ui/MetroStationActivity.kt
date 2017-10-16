@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.ProgressBar
+import com.felixlin.dcmetroexplorer.Constants
 import com.felixlin.dcmetroexplorer.R
 import com.felixlin.dcmetroexplorer.WmataStationSearchManager
 import com.felixlin.dcmetroexplorer.adapter.MetroStationListAdapter
@@ -19,6 +20,7 @@ class MetroStationActivity : AppCompatActivity(), WmataStationSearchManager.Stat
     lateinit var wmataStationSearchManager: WmataStationSearchManager
     private var metroData = ArrayList<Metro>()
     private var metroStationNameList = ArrayList<String>()
+    private var metroNewList = ArrayList<Metro>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +29,7 @@ class MetroStationActivity : AppCompatActivity(), WmataStationSearchManager.Stat
         showProgress(true)
 
         linearLayoutManager = LinearLayoutManager(this)         // show station list on the recycler view
-        adapter = MetroStationListAdapter(this, metroStationNameList)
+        adapter = MetroStationListAdapter(this, metroNewList)
         wmataStationSearchManager = WmataStationSearchManager(this, metroData)
         wmataStationSearchManager.stationSearchCompletionListener = this
         wmataStationSearchManager.search()
@@ -35,33 +37,26 @@ class MetroStationActivity : AppCompatActivity(), WmataStationSearchManager.Stat
 
         searchEditView.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                filter(s.toString())
+
             }
 
             override fun afterTextChanged(s: Editable?) {
                 filter(s.toString())
             }
         })
+
 
     }
 
     override fun onResume() {
         super.onResume()
-        searchEditView.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                filter(s.toString())
-            }
-        })
+        searchEditView.text.clear()
     }
+
 
     fun showProgress(show: Boolean) {
         if (show) {
@@ -78,6 +73,7 @@ class MetroStationActivity : AppCompatActivity(), WmataStationSearchManager.Stat
             for (i in 0..metroData.size - 1) {
                 if (!metroStationNameList.contains(metroData.get(i).station)) {
                     metroStationNameList.add(metroData.get(i).station)
+                    metroNewList.add(metroData.get(i))
                 }
             }
             showProgress(false)
@@ -95,16 +91,22 @@ class MetroStationActivity : AppCompatActivity(), WmataStationSearchManager.Stat
     }
 
     private fun filter(text: String) {
-        val newList = ArrayList<String>();
+        val newStationList = ArrayList<String>();
+        val newMetroList = ArrayList<Metro>()
         if (metroStationNameList.isNotEmpty() && text.isNotEmpty()) {
             for (i in 0..metroStationNameList.size - 1) {
                 val content = metroStationNameList[i]
                 if (content.toLowerCase().contains(text.toLowerCase())) {
-                    newList.add(metroStationNameList.get(i))
+                    newStationList.add(metroStationNameList.get(i))
+                    newMetroList.add(metroNewList.get(i))
                 }
             }
+            if (newStationList.size == 0){
+                newStationList.add(Constants.NO_MATCH)
+                newMetroList.add(Metro("", Constants.NO_MATCH, 0.0F,0.0F,"", ""))
+            }
 
-            adapter.filterList(newList)
+            adapter.filterList(newMetroList)
         }
     }
 }
