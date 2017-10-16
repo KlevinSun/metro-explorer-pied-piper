@@ -64,10 +64,10 @@ class LandmarkDbTable(context: Context)
 
         val cursor = db.doQuery(TABLE_NAME, columns, orderBy = order)
 
-        return parseHabitFromCursor(cursor)
+        return parseLandmarkFromCursor(cursor)
     }
 
-    private fun parseHabitFromCursor(cursor: Cursor): MutableList<Landmark> {
+    private fun parseLandmarkFromCursor(cursor: Cursor): MutableList<Landmark> {
         val landmarks = mutableListOf<Landmark>()
         while (cursor.moveToNext()) {
             val title = cursor.getString(TITLE_COL)
