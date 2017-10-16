@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">华盛顿特区地铁搜索</string>
+    <string name="landmark_icon">地标</string>
+    <string name="save_landmark">保存地标</string>
+
+    <string name="nearby_button">附近地铁站</string>
+    <string name="selectstation_button">搜索地铁站</string>
+    <string name="favorites_button">我喜欢的</string>
+    <string name="Search">搜索</string>
+    <string name="hint">搜索</string>
+</resources>

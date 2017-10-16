@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MetroExplorer.iml" filepath="$PROJECT_DIR$/MetroExplorer.iml" />
+      <module fileurl="file://D:\AndroidStudioProjects\metro-explorer-pied-piper\metro-explorer-pied-piper\MetroExplorer.iml" filepath="D:\AndroidStudioProjects\metro-explorer-pied-piper\metro-explorer-pied-piper\MetroExplorer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\AndroidStudioProjects\metro-explorer-pied-piper\metro-explorer-pied-piper\app\app.iml" filepath="D:\AndroidStudioProjects\metro-explorer-pied-piper\metro-explorer-pied-piper\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/metro-explorer-pied-piper.iml" filepath="$PROJECT_DIR$/metro-explorer-pied-piper.iml" />
     </modules>
   </component>
 </project>
