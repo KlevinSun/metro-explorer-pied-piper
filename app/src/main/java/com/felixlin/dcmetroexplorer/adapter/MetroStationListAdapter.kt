@@ -35,7 +35,6 @@ class MetroStationListAdapter(private var context: Context, private var MetroDat
     }
 
 
-
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
         private var view: View = itemView
         private var station: String? = null

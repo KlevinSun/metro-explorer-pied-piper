@@ -9,6 +9,7 @@ import com.koushikdutta.ion.Ion
 
 class WmataStationSearchManager(val context: Context, val result: ArrayList<Metro>)
 {
+
     private val TAG = "FetchMetroManager"
     var stationSearchCompletionListener: StationSearchCompletionListener?= null
 

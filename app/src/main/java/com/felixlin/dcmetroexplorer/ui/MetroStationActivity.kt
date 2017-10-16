@@ -76,6 +76,7 @@ class MetroStationActivity : AppCompatActivity(), WmataStationSearchManager.Stat
                     metroNewList.add(metroData.get(i))
                 }
             }
+
             showProgress(false)
 
             MetroStationList.layoutManager = linearLayoutManager
